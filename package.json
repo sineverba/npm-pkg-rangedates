@@ -10,6 +10,7 @@
   "scripts": {
     "build": "tsc",
     "test": "jest --watch",
+    "test:ci": "jest",
     "coverage": "jest --coverage",
     "lint": "tslint -p tsconfig.json",
     "prettier": "prettier -c \"src/**/*.ts\"",
