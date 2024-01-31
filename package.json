@@ -1,0 +1,52 @@
+{
+  "name": "@sineverba/rangedates",
+  "version": "0.1.0",
+  "description": "rangedates returns an object starting from one or two dates",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sineverba/npm-pkg-rangedates.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --watch",
+    "coverage": "jest --coverage",
+    "lint": "tslint -p tsconfig.json",
+    "prettier": "prettier -c \"src/**/*.ts\"",
+    "fixprettier": "prettier --write \"src/**/*.ts\"",
+    "prepare": "husky"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "keywords": [
+    "npm",
+    "package",
+    "dates"
+  ],
+  "author": "alessandro.arici@gmail.com",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.11",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
+    "coveralls": "^3.1.1",
+    "husky": "^9.0.7",
+    "jest": "^29.7.0",
+    "npm-check-updates": "^16.14.14",
+    "prettier": "^3.2.4",
+    "ts-jest": "^29.1.2",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^5.3.3"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "dependencies": {
+    "moment": "^2.30.1"
+  }
+}
