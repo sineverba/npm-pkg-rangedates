@@ -50,4 +50,14 @@ describe("Test rangeDates", () => {
     };
     expect(rangeDates("200001", "202312")).toStrictEqual(expectedResult);
   });
+
+  it("Should return date with month without zero padding", () => {
+    const expectedResult = {
+      dateStart: "201503",
+      dateEnd: "202112"
+    };
+    expect(rangeDates("20153", "202112", "YYYYMM")).toStrictEqual(
+      expectedResult
+    );
+  });
 });
