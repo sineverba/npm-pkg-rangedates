@@ -1,4 +1,4 @@
-# Next version
+# 1.2.0
 + Handle undefined
 
 ## 1.1.0
