@@ -60,4 +60,64 @@ describe("Test rangeDates", () => {
       expectedResult
     );
   });
+
+  it("Should return date if start is undefined", () => {
+    const expectedResult = {
+      dateStart: "202304",
+      dateEnd: "202312"
+    };
+    expect(rangeDates("undefined", "202312", "YYYYMM")).toStrictEqual(
+      expectedResult
+    );
+  });
+
+  it("Should return date if start is undefined + 1 char", () => {
+    const expectedResult = {
+      dateStart: "202304",
+      dateEnd: "202312"
+    };
+    expect(rangeDates("undefined4", "202312", "YYYYMM")).toStrictEqual(
+      expectedResult
+    );
+  });
+
+  it("Should return date if start is undefined + 2 char", () => {
+    const expectedResult = {
+      dateStart: "202304",
+      dateEnd: "202312"
+    };
+    expect(rangeDates("undefined04", "202312", "YYYYMM")).toStrictEqual(
+      expectedResult
+    );
+  });
+
+  it("Should return date if end is undefined", () => {
+    const expectedResult = {
+      dateStart: "200001",
+      dateEnd: "202304"
+    };
+    expect(rangeDates("200001", "undefined", "YYYYMM")).toStrictEqual(
+      expectedResult
+    );
+  });
+
+  it("Should return date if end is undefined + 1 char", () => {
+    const expectedResult = {
+      dateStart: "200001",
+      dateEnd: "202304"
+    };
+    expect(rangeDates("200001", "undefined4", "YYYYMM")).toStrictEqual(
+      expectedResult
+    );
+  });
+
+  it("Should return date if end is undefined + 2 char", () => {
+    const expectedResult = {
+      dateStart: "200001",
+      dateEnd: "202304"
+    };
+    expect(rangeDates("200001", "undefined04", "YYYYMM")).toStrictEqual(
+      expectedResult
+    );
+  });
 });

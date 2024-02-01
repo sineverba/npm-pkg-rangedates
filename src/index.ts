@@ -2,7 +2,7 @@ import moment = require("moment");
 
 /**
  *
- * Reformat date if missing the zero padding
+ * Reformat date if missing the zero padding or is undefined
  *
  * @param dateString the string that represents a date or null
  * @returns
@@ -11,6 +11,11 @@ const reformatDate = (dateString: any) => {
   // if date has a month without zero padding
   if (dateString && dateString.length === 5) {
     return `${dateString.substring(0, 4)}0${dateString.substring(4)}`;
+  }
+  // define a regex for undefined values
+  const regex = /undefined.{0,2}$/;
+  if (dateString && regex.test(dateString)) {
+    return moment();
   }
   return dateString;
 };
