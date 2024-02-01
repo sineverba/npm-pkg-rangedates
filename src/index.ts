@@ -2,6 +2,21 @@ import moment = require("moment");
 
 /**
  *
+ * Reformat date if missing the zero padding
+ *
+ * @param dateString the string that represents a date or null
+ * @returns
+ */
+const reformatDate = (dateString: any) => {
+  // if date has a month without zero padding
+  if (dateString && dateString.length === 5) {
+    return `${dateString.substring(0, 4)}0${dateString.substring(4)}`;
+  }
+  return dateString;
+};
+
+/**
+ *
  */
 export const rangeDates = (
   dateStart: any,
@@ -9,9 +24,9 @@ export const rangeDates = (
   outputFormat = "YYYY-MM-DD"
 ) => {
   // Save in a temp variable the dateStart
-  let returnDateStart = dateStart;
+  let returnDateStart = reformatDate(dateStart);
   // Save in a temp variable the dateEnd
-  let returnDateEnd = dateEnd;
+  let returnDateEnd = reformatDate(dateEnd);
   // if dateStart is null, get current date
   if (!returnDateStart) {
     returnDateStart = moment();
