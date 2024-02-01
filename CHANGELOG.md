@@ -1,4 +1,7 @@
-# 1.1.0
+# Next version
++ Handle undefined
+
+## 1.1.0
 + Fix values without zero padding
 
 ## 1.0.0
